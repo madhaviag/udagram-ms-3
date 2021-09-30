@@ -7,34 +7,35 @@ services:
 
 # Pre-testing installs
 install:
-  - cd udagram-api-feed && npm install && cd ..
-  - cd udagram-api-user && npm install && cd ..
-  - cd udagram-reverseproxy && npm install && cd ..
-  - cd udagram-frontend && npm install && cd ..
+    - echo "hello"
+#   - cd udagram-api-feed && npm install && cd ..
+#   - cd udagram-api-user && npm install && cd ..
+#   - cd udagram-reverseproxy && npm install && cd ..
+#   - cd udagram-frontend && npm install && cd ..
 
-# Scripts to be run such as tests
-before_script:
-  - echo "no tests"
+# # Scripts to be run such as tests
+# before_script:
+#   - echo "no tests"
 
-script:
-  - docker --version # print the version for logging
-  - docker-compose -f docker-compose-build.yaml build --parallel
-  # - docker build -t udagram-api-feed ./udagram-api-feed
-  # - docker tag udagram-api-feed sudkul/udagram-api-feed:v1
-  # - docker build -t udagram-api-user ./udagram-api-user
-  # - docker tag udagram-api-user sudkul/udagram-api-user:v1
-  # - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  # - docker tag udagram-reverseproxy sudkul/udagram-reverseproxy:v1
-  # - docker build -t udagram-frontend ./udagram-frontend
-  # - docker tag udagram-frontend sudkul/udagram-frontend:v1
+# script:
+#   - docker --version # print the version for logging
+#   - docker-compose -f docker-compose-build.yaml build --parallel
+#   # - docker build -t udagram-api-feed ./udagram-api-feed
+#   # - docker tag udagram-api-feed sudkul/udagram-api-feed:v1
+#   # - docker build -t udagram-api-user ./udagram-api-user
+#   # - docker tag udagram-api-user sudkul/udagram-api-user:v1
+#   # - docker build -t udagram-reverseproxy ./udagram-reverseproxy
+#   # - docker tag udagram-reverseproxy sudkul/udagram-reverseproxy:v1
+#   # - docker build -t udagram-frontend ./udagram-frontend
+#   # - docker tag udagram-frontend sudkul/udagram-frontend:v1
 
-# Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push sudkul/udagram-api-feed:v1
-  - docker push sudkul/udagram-api-user:v1
-  - docker push sudkul/udagram-reverseproxy:v1
-  - docker push sudkul/udagram-frontend:v1
+# # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
+# after_success:
+#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#   - docker push sudkul/udagram-api-feed:v1
+#   - docker push sudkul/udagram-api-user:v1
+#   - docker push sudkul/udagram-reverseproxy:v1
+#   - docker push sudkul/udagram-frontend:v1
 
 
 
