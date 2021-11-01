@@ -5,7 +5,7 @@ metadata:
     service: reverseproxy
   name: reverseproxy
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       service: reverseproxy
@@ -15,7 +15,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: fryethomas23/reverseproxy
+      - image: fryethomas23/udagram-reverseproxy:v1
         name: reverseproxy
         imagePullPolicy: Always          
         resources:
