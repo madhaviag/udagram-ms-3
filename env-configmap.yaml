@@ -1,14 +1,16 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  AWS_BUCKET: udagramfryedev2
-  AWS_PROFILE: default
+  POSTGRES_HOST: udagrambhagatdev.czsshb8ftj6t.us-east-2.rds.amazonaws.com
+  POSTGRES_DB: postgres
+  AWS_BUCKET: test-150789494332-dev
   AWS_REGION: us-east-2
-  JWT_SECRET: hello
-  POSTGRES_DB: udagramfryedev
-  POSTGRES_HOST: udagramfryedev.csmwz4el83iv.us-east-2.rds.amazonaws.com
-  URL: http://aaaa9902050c34805a7043554a981e2b-1414731619.us-east-2.elb.amazonaws.com
+  AWS_PROFILE: default
+  JWT_SECRET: testing
+  URL: http://localhost:8100
+  
 metadata:
   name: env-config
   namespace: default
+
   

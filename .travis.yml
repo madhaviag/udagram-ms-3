@@ -20,21 +20,21 @@ script:
   - docker --version # print the version for logging
   # - docker-compose -f docker-compose-build.yaml build --parallel
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed fryethomas23/udagram-api-feed:v1
+  - docker tag udagram-api-feed madhaviag/udagram-api-feed:v10
   - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user fryethomas23/udagram-api-user:v1
+  - docker tag udagram-api-user madhaviag/udagram-api-user:v10
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-reverseproxy fryethomas23/udagram-reverseproxy:v1
+  - docker tag udagram-reverseproxy madhaviag/udagram-reverseproxy:v10
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend fryethomas23/udagram-frontend:v1
+  - docker tag udagram-frontend madhaviag/udagram-frontend:v10
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push fryethomas23/udagram-api-feed:v1
-  - docker push fryethomas23/udagram-api-user:v1
-  - docker push fryethomas23/udagram-reverseproxy:v1
-  - docker push fryethomas23/udagram-frontend:v1
+  - docker push madhaviag/udagram-api-feed:v10
+  - docker push madhaviag/udagram-api-user:v10
+  - docker push madhaviag/udagram-reverseproxy:v10
+  - docker push madhaviag/udagram-frontend:v10
 
 
 
