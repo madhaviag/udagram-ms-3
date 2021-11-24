@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: frontend
+    app: frontend
   name: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: frontend
+      app: frontend
   template:
     metadata:
       labels:
-        service: frontend
+        app: frontend
     spec:
       containers:
-        - image: madhaviag/udagram-frontend:v10
+        - image: madhaviag/udagram-frontend:v11
           ports:
           - containerPort: 80
           name: frontend
@@ -25,5 +25,5 @@ spec:
               memory: "64Mi"
               cpu: "250m"
             limits:
-              memory: "1024Mi"
+              memory: "2048Mi"
               cpu: "500m"
