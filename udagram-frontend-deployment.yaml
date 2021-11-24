@@ -15,7 +15,7 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: madhaviag/udagram-frontend:v11
+        - image: madhaviag/udagram-frontend:v13
           ports:
           - containerPort: 80
           name: frontend
